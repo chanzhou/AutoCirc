@@ -45,17 +45,19 @@ To obtain the unmapped reads, the user should map all reads to a reference genom
 For example:
 * Bowtie2:
 
-  + Step 1: Mapping reads to reference genome 
+*Step 1: Mapping reads to reference genome *
 
 ```bash
 bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> 2>bowtie2.log | samtools view -hbuS - | samtools sort - sample_vs_genome
 ```
-* 
-  + Step 2: extract the unmapped reads in BAM format
+
+*Step 2: extract the unmapped reads in BAM format*
 
 ```bash
 samtools view -hf 4 sample_vs_genome.bam | samtools view -Sb - > unmapped.bam
 ```
+
+### OR
 
 * TopHat:
 ```bash

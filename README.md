@@ -92,7 +92,7 @@ Options:
 	-o 		Output folder name 
 			default: "AutoCirc_output"
 	
-	-h/--help	This * help *
+	-h/--help	This usage
 	-v/--version	Print version
 ```
 

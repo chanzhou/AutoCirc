@@ -137,7 +137,7 @@ The Final output file “circ.final.bed” follows the standard BED format as fo
 
 * Chan Zhou, Benoit Molinie, Kaveh Daneshvar, Joshua V Pondick, Jinkai Wang, Nicholas O Van Wittenberghe, Yi Xing, Cosmas C Giallourakis, Alan C Mullen. Identification and characterization of m6A circular RNA epitranscriptomes. bioRxiv, March, 2017. doi: https://doi.org/10.1101/115899
 
-http://biorxiv.org/content/early/2017/03/10/115899
+* http://biorxiv.org/content/early/2017/03/10/115899
 
 ## License
 Copyright (C) 2017 The Mullen Lab. See the LICENSE file for license rights and limitations.

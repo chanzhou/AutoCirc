@@ -13,7 +13,7 @@ Authors: Chan Zhou (zhou.chan@mgh.harvard.edu)
 Maintainer: Chan Zhou 
 
 ## A Workflow of AutoCirc 
-<insert the graph of our pipeline>
+![pipeline](https://raw.githubusercontent.com/chanzhou/AutoCirc/master/flow.jpg)
 
 AutoCirc detects circRNAs from the BAM file of unmapped reads (output of Bowtie2 / Bowtie / TopHat) by the following steps: 
 1)	Extract the 20 nucleotide anchors from the left and right ends of unmapped reads and map them to the reference genome with Bowtie2. 
@@ -40,31 +40,40 @@ The lengths of reads should be at least 50 nucleotides (nt).
 To identify reliable back splice junctions of potential circRNAs, we recommend using RNA-seq with read lengths of at least 80 nt . 
 
 ## Data Preparation
-To obtain the unmapped reads, the user should map all reads to a reference genome either by Bowtie2 or TopHat. For paired end RNA-seq data, each end of RNA-seq data will be processed separately as a single end RNA-seq data.
+To obtain the unmapped reads, the user should map all reads to a reference genome either by *Bowtie2 or TopHat*. For paired end RNA-seq data, each end of RNA-seq data will be processed separately as a single end RNA-seq data.
 
 For example:
-Bowtie2:
+* Bowtie2:
+
 Step 1: Mapping reads to reference genome 
 
-$ bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> 2>bowtie2.log | samtools view -hbuS - | samtools sort - sample_vs_genome
-
+```bash
+bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> 2>bowtie2.log | samtools view -hbuS - | samtools sort - sample_vs_genome
+```
 Step 2: extract the unmapped reads in BAM format
 
-$ samtools view -hf 4 sample_vs_genome.bam | samtools view -Sb - > unmapped.bam
+```bash
+samtools view -hf 4 sample_vs_genome.bam | samtools view -Sb - > unmapped.bam
+```
 
-TopHat:
+* TopHat:
+```bash
 tophat -p 4  <options> -o tophat_out <bowtie2_genome_index> <reads.fastq>
+```
 
-You will use the unmapped.bam file obtained by Bowtie2 or TopHat (in the output folder of TopHat).
+You will use the *unmapped.bam* file obtained by Bowtie2 or TopHat (in the output folder of TopHat).
 
 ## Installation 
 
-Download AutoCirc
+### Download AutoCirc
+```bash
 git clone https://github.com/chanzhou/AutoCirc.git 
-cd AutoCirc_v1.0
+cd AutoCirc
+```
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
 
 ### Usage
+```bash
 ./AutoCirc.pl  [options]
 
 Options:	
@@ -85,17 +94,22 @@ Options:
 	
 	-h/--help	This help
 	-v/--version	Print version
+```
 
 ### Examples :
-$ ./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.strandarded.bed --mis 0 --min 100 --max 100000 -o autocirc_output 
-
+```bash
+./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.strandarded.bed --mis 0 --min 100 --max 100000 -o autocirc_output 
+```
 or
 
-$ ./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.bed
-
+```bash
+./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.bed
+```
 or
 
-$./AutoCirc.pl  -g /human_genome/hg19.fa --bam unmapped.bam -o autocirc_output (if do not have the reference gene annotations)   
+```bash
+./AutoCirc.pl  -g /human_genome/hg19.fa --bam unmapped.bam -o autocirc_output (if do not have the reference gene annotations)   
+```
 
 ## NOTE: 
 1. The reference genome file should be the same one used in the previous Botwie/Bowtie2/Tophat mapping.
@@ -107,20 +121,21 @@ AutoCirc will output both the final predicted back splice junction file (circ.fi
 
 The Final output file “circ.final.bed” follows the standard BED format as follows:
 
-Field(column)	Description
-Chr	Chromosome
-Start	Start of junction
-End	End of junction
-Junc_name	The name of back splice junction
-Coverage	Number of reads mapping to the junction
-Site_strand	Strand of junction
-Distance	Distance between the two ends of junction
-Read_tags	All the tags of reads mapping to the junction
+| Field(column)| Description                                   |
+| :-----------:| :---------------------------------------------|
+| Chr	       | Chromosome                                    |
+| Start	       | Start of junction                             |
+| End	       | End of junction                               |
+| Junc_name    | The name of back splice junction              |
+| Coverage     | Number of reads mapping to the junction       |
+| Site_strand  | Strand of junction                            |
+| Distance     | Distance between the two ends of junction     |
+| Read_tags    | All the tags of reads mapping to the junction |
 
 
 ## Citation
 
-Chan Zhou, Benoit Molinie, Kaveh Daneshvar, Joshua V Pondick, Jinkai Wang, Nicholas O Van Wittenberghe, Yi Xing, Cosmas C Giallourakis, Alan C Mullen. Identification and characterization of m6A circular RNA epitranscriptomes. bioRxiv, March, 2017. doi: https://doi.org/10.1101/115899
+* Chan Zhou, Benoit Molinie, Kaveh Daneshvar, Joshua V Pondick, Jinkai Wang, Nicholas O Van Wittenberghe, Yi Xing, Cosmas C Giallourakis, Alan C Mullen. Identification and characterization of m6A circular RNA epitranscriptomes. bioRxiv, March, 2017. doi: https://doi.org/10.1101/115899
 
 http://biorxiv.org/content/early/2017/03/10/115899
 

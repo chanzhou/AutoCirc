@@ -13,7 +13,7 @@ Authors: Chan Zhou (zhou.chan@mgh.harvard.edu)
 Maintainer: Chan Zhou 
 
 ## A Workflow of AutoCirc 
-![pipeline](https://raw.githubusercontent.com/chanzhou/AutoCirc/master/flow.jpg)
+![pipeline](https://github.com/chanzhou/AutoCirc/blob/master/AutoCirc_Workflow.jpg)
 
 AutoCirc detects circRNAs from the BAM file of unmapped reads (output of Bowtie2 / Bowtie / TopHat) by the following steps: 
 1)	Extract the 20 nucleotide anchors from the left and right ends of unmapped reads and map them to the reference genome with Bowtie2. 

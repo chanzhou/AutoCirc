@@ -143,6 +143,5 @@ The Final output file “circ.final.bed” follows the standard BED format as fo
 * http://biorxiv.org/content/early/2017/03/10/115899
 
 ## License
-Copyright (C) 2017 The Mullen Lab. See the LICENSE file for license rights and limitations.
-
+Copyright (C) 2017-2022 The Mullen Lab. AutoCirc is free software made available under the MIT License (https://opensource.org/licenses/MIT). 
 

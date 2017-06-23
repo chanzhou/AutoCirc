@@ -50,6 +50,7 @@ For example:
 ```bash
 bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> 2>bowtie2.log | samtools view -hbuS - | samtools sort - sample_vs_genome
 ```
+* 
   + Step 2: extract the unmapped reads in BAM format
 
 ```bash

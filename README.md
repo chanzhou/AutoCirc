@@ -57,14 +57,14 @@ tophat -p 4  <options> -o tophat_out <bowtie2_genome_index> <reads.fastq>
 
 You will use the unmapped.bam file obtained by Bowtie2 or TopHat (in the output folder of TopHat).
 
-Installation 
+## Installation 
 
 Download AutoCirc
 git clone https://github.com/chanzhou/AutoCirc.git 
 cd AutoCirc_v1.0
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
 
-Usage
+### Usage
 ./AutoCirc.pl  [options]
 
 Options:	
@@ -86,7 +86,7 @@ Options:
 	-h/--help	This help
 	-v/--version	Print version
 
-Examples :
+### Examples :
 $ ./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.strandarded.bed --mis 0 --min 100 --max 100000 -o autocirc_output 
 
 or
@@ -97,13 +97,12 @@ or
 
 $./AutoCirc.pl  -g /human_genome/hg19.fa --bam unmapped.bam -o autocirc_output (if do not have the reference gene annotations)   
 
-NOTE: 
+## NOTE: 
 1. The reference genome file should be the same one used in the previous Botwie/Bowtie2/Tophat mapping.
 2. The reference gene annotation should be in standard bed format with full 12 fields ( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) and can be obtained from the UCSC genome browser.
 
-3. AutoCirc toolkit
 
-Output
+## Output
 AutoCirc will output both the final predicted back splice junction file (circ.final.bed) and also some intermediate tmp files and log files. All are included in the specified output folder (default is “AutoCirc_output”).
 
 The Final output file “circ.final.bed” follows the standard BED format as follows:
@@ -119,13 +118,13 @@ Distance	Distance between the two ends of junction
 Read_tags	All the tags of reads mapping to the junction
 
 
-Citation
+## Citation
 
 Chan Zhou, Benoit Molinie, Kaveh Daneshvar, Joshua V Pondick, Jinkai Wang, Nicholas O Van Wittenberghe, Yi Xing, Cosmas C Giallourakis, Alan C Mullen. Identification and characterization of m6A circular RNA epitranscriptomes. bioRxiv, March, 2017. doi: https://doi.org/10.1101/115899
 
 http://biorxiv.org/content/early/2017/03/10/115899
 
-License
+## License
 Copyright (C) 2017 The Mullen Lab. See the LICENSE file for license rights and limitations.
 
 

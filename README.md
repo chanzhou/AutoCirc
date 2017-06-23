@@ -77,10 +77,10 @@ Then run the pipeline inside the AutoCirc folder, which includes all the require
 ./AutoCirc.pl  [options]
 
 Options:	
-	-g/--genome     Absolute path of the reference genome file \in fasta format (e.g. /genome_reference/hg19.fa) 
-	-I/--gindex     Absolute path of the genome index of bowtie2 (e.g. /bowtie2_index/hg19 )
-	--bam		Bam file of unmapped reads (output by bowtie/bowtie2/tophat)
-	-b/--bed	Reference gene annotation in standard bed format 
+	-g/--genome     Absolute path of the reference genome file (Fastq format) 
+	-I/--gindex     Absolute path of the genome index of bowtie2 (e.g. /bowtie2_index/hg19)
+	--bam		Bam file of unmapped reads (output by bowtie or bowtie2 or tophat)
+	-b/--bed	Reference gene annotation (standard bed format) 
 			default: without reference gene annotation
 			The absolute path to the annotated gene file
 	--mis		Maximum allowed mismatches during the search process (0, 1, or 2) 
@@ -92,7 +92,7 @@ Options:
 	-o 		Output folder name 
 			default: "AutoCirc_output"
 	
-	-h/--help	This *help*
+	-h/--help	This * help *
 	-v/--version	Print version
 ```
 

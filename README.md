@@ -27,9 +27,9 @@ Finally, AutoCirc will output the back splice junctions that contain the canonic
 ## Prerequisites
 
 To use AutoCirc, you will need the following programs in your PATH:
-*Bowtie2 (version 2.2.5 or higher)
-*bedtools
-*samtools
+* Bowtie2 (version 2.2.5 or higher)
+* bedtools
+* samtools
 
 You will also need Perl version 5.16.3 or higher.
 

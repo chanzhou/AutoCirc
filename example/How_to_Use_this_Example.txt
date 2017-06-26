@@ -1,0 +1,22 @@
+0. obtain the RNA-seq data
+0-1. pls downlaod the RNA-seq in SRA from NCBI ftp:
+$ wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX176/SRX176913/SRR540252/SRR540252.sra
+
+0-2. convert the SRA format into FASTQ (it is a paired-end RNA-seq data)
+$ fastq-dump --split-3 SRR540252.sra
+
+It results in SRR540252_1.fastq and SRR540252_2.fastq
+
+1. Here take the first end RNA-seq data SRR540252_1.fastq for example:
+$ bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U SRR540252_1.fastq 2>bowtie2.log | samtools view -hbuS - | samtools sort - sample_vs_genome
+
+$ samtools view -hf 4 sample_vs_genome.bam | samtools view -Sb - > unmapped.bam
+
+It results in unmapped.bam
+
+2. Detect circRNAs from unmapped.bam
+./AutoCirc.pl  -g  <absolute path to "hg19.fa" file> -I <absolute path to hg19 bowtie2 index> --bam unmapped_sample.bam -b <absolute_path_to "RefSeq_Gene.strandard.bed" file> -o autocirc_out
+
+Pls note that: the "script" folder should be put in the same folder as AutoCirc.pl and should run the command inside that folder.
+
+The output of this example should be same as in the "autocirc_out" folder under the "example" folder.

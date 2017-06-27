@@ -72,6 +72,8 @@ You will use the *unmapped.bam* file obtained by Bowtie2 or TopHat (in the outpu
 ```bash
 git clone https://github.com/chanzhou/AutoCirc.git 
 cd AutoCirc
+chmod 755 AutoCirc.pl
+chmod 755 script/*
 ```
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
 

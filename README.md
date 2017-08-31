@@ -140,7 +140,7 @@ The Final output file “circ.final.bed” follows the standard BED format as fo
 
 ## Citation
 
-* Chan Zhou*, Benoit Molinie*, Kaveh Daneshvar, Joshua V. Pondick, Jinkai Wang, Nicholas O. Van Wittenberghe, Yi Xing, Cosmas C. Giallourakis+, and Alan C. Mullen+. In Press. “Genome-wide maps of m6A circRNAs identify widespread and cell-type-specific methylation patterns that are distinct from mRNAs.” Cell Reports, 2017 (Aug 04, Accepted) 
+* Chan Zhou*, Benoit Molinie*, Kaveh Daneshvar, Joshua V. Pondick, Jinkai Wang, Nicholas O. Van Wittenberghe, Yi Xing, Cosmas C. Giallourakis+, and Alan C. Mullen+. Genome-Wide Maps of m6A circRNAs Identify Widespread and Cell-Type-Specific Methylation Patterns that Are Distinct from mRNAs. Cell Reports, 20(9), 2262–2276. doi:10.1016/j.celrep.2017.08.027 (published on Aug 29th, 2017) 
 
 * bioRxiv (March, 2017) version:  http://biorxiv.org/content/early/2017/03/10/115899
 

@@ -4,9 +4,9 @@
 ## What is AutoCirc
 AutoCirc is a computational program to automatically identify back-splice junctions of potential circular RNAs (circRNAs) from RNA-seq data. Its core algorithm is implemented by C++, and it is wrapped in Perl, so it runs faster than most other circRNA detection tools under the same computer environment. AutoCirc is designed to detect circRNAs for all species as long as their genomes are available. It does not require gene annotations, but gene annotations will improve detection of circRNAs. AutoCirc runs on Linux/Unix OS.
 
-Version: 1.0
+Version: 1.2
 
-Last Modified: 06/20/2017
+Last Modified: 10/12/2017
 
 Authors: Chan Zhou (zhou.chan@mgh.harvard.edu)
 
@@ -48,7 +48,7 @@ For example:
 *Step 1: Mapping reads to reference genome*
 
 ```bash
-bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> -O BAM 1>bowtie2out.bam 2>bowtie2.log 
+bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome_index> -U <reads.fastq> 1>bowtie2out.sam 2>bowtie2.log 
 ```
 
 *Step 2: extract the unmapped reads in BAM format*
@@ -72,14 +72,14 @@ You will use the *unmapped.bam* file obtained by Bowtie2 or TopHat (in the outpu
 ```bash
 git clone https://github.com/chanzhou/AutoCirc.git 
 cd AutoCirc
-chmod 755 AutoCirc.pl
+chmod 755 AutoCirc_v1.2.pl
 chmod 755 script/*
 ```
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
 
 ### Usage
 ```bash
-./AutoCirc.pl  [options]
+./AutoCirc_v1.2.pl  [options]
 
 Options:	
 	-g/--genome     Absolute path of the reference genome file (Fastq format) 
@@ -88,6 +88,8 @@ Options:
 	-b/--bed	Reference gene annotation (standard bed format) 
 			default: without reference gene annotation
 			The absolute path to the annotated gene file
+	-s/--seed	The size of the seed (e.g. anchor size)
+			default: 20 (recommend values: 15-25; this value should be smaller than the (length of reads-10)/2)
 	--mis		Maximum allowed mismatches during the search process (0, 1, or 2) 
 			default: 0
 	--min		Minimum distance between the two splice sites
@@ -103,17 +105,17 @@ Options:
 
 ### Examples :
 ```bash
-./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.strandarded.bed --mis 0 --min 100 --max 100000 -o autocirc_output 
+./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed --mis 0 --min 100 --max 100000 -s 20 -o autocirc_output 
 ```
 or
 
 ```bash
-./AutoCirc.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/Refseq.gene.bed
+./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed
 ```
 or
 
 ```bash
-./AutoCirc.pl  -g /human_genome/hg19.fa --bam unmapped.bam -o autocirc_output   
+./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa --bam unmapped.bam -s 15 -o autocirc_output   
 ```
 
 ## NOTE: 

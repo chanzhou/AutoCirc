@@ -54,7 +54,7 @@ bowtie2 -p4 --very-sensitive --mm -D20 --score-min=C,-15,0 -q -x <bowtie2_genome
 *Step 2: extract the unmapped reads in BAM format*
 
 ```bash
-samtools sort bowtie2out.bam | samtools view -hf 4 - | samtools view -Sb - > unmapped.bam
+samtools view -hbuS bowtie2out.sam | samtools view -hf 4 - | samtools view -Sb - | samtools sort - unmapped
 ```
 
 ### OR

@@ -121,6 +121,7 @@ or
 ## NOTE: 
 1. The reference genome file should be the same one used in the previous Botwie/Bowtie2/Tophat mapping.
 2. The reference gene annotation should be in standard bed format with full 12 fields ( https://genome.ucsc.edu/FAQ/FAQformat.html#format1) and can be obtained from the UCSC genome browser.
+3. The minimum and maximum distance between the two splice sites are suggested to be set as the numbers close to the minimum and the maximum size of annotated genes in the studied genome.  The current default option“--min 100 --max 100000” is set for human genome. If you will study other species, pls change these settings accordingly. 
 
 
 ## Output

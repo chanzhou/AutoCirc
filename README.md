@@ -4,9 +4,9 @@
 ## What is AutoCirc
 AutoCirc is a computational program to automatically identify back-splice junctions of potential circular RNAs (circRNAs) from RNA-seq data. Its core algorithm is implemented by C++, and it is wrapped in Perl, so it runs faster than most other circRNA detection tools under the same computer environment. AutoCirc is designed to detect circRNAs for all species as long as their genomes are available. It does not require gene annotations, but gene annotations will improve detection of circRNAs. AutoCirc runs on Linux/Unix OS.
 
-Version: 1.2
+Version: 1.3
 
-Last Modified: 10/12/2017
+Last Modified: 08/21/2018
 
 Authors: Chan Zhou (zhou.chan@mgh.harvard.edu)
 

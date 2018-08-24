@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### [1.3] - 2018-8-21
 ### Added
-- Incoporate the function of removing false positive circRNAs that come across multiple unoverlapped transcripts, but not originate from another transcripts;
+- Incoporate the function of removing false positive circRNAs that come across multiple unoverlapped transcripts, but do not originate from another transcripts;
 - Include "circ_across_mgenes.pl" in the script folder.
 
 ### Changed

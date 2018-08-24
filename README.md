@@ -79,7 +79,7 @@ Then run the pipeline inside the AutoCirc folder, which includes all the require
 
 ### Usage
 ```bash
-./AutoCirc_v1.2.pl  [options]
+./AutoCirc_v1.3.pl  [options]
 
 Options:	
 	-g/--genome     Absolute path of the reference genome file (Fastq format) 

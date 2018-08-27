@@ -72,7 +72,7 @@ You will use the *unmapped.bam* file obtained by Bowtie2 or TopHat (in the outpu
 ```bash
 git clone https://github.com/chanzhou/AutoCirc.git 
 cd AutoCirc
-chmod 755 AutoCirc_v1.2.pl
+chmod 755 AutoCirc_v1.3.pl
 chmod 755 script/*
 ```
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
@@ -82,7 +82,7 @@ Then run the pipeline inside the AutoCirc folder, which includes all the require
 ./AutoCirc_v1.3.pl  [options]
 
 Options:	
-	-g/--genome     Absolute path of the reference genome file (Fastq format) 
+	-g/--genome     Absolute path of the reference genome file (Fasta format) 
 	-I/--gindex     Absolute path of the genome index of bowtie2 (e.g. /bowtie2_index/hg19)
 	--bam		Bam file of unmapped reads (output by bowtie or bowtie2 or tophat)
 	-b/--bed	Reference gene annotation (standard bed format) 

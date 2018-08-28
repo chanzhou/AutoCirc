@@ -105,17 +105,17 @@ Options:
 
 ### Examples :
 ```bash
-./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed --mis 0 --min 100 --max 100000 -s 20 -o autocirc_output 
+./AutoCirc_v1.3.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed --mis 0 --min 100 --max 100000 -s 20 -o autocirc_output 
 ```
 or
 
 ```bash
-./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed
+./AutoCirc_v1.3.pl  -g /human_genome/hg19.fa -I /bowtie2_index/hg19 --bam unmapped.bam -b /hg19/Annotation/refGene.bed
 ```
 or
 
 ```bash
-./AutoCirc_v1.2.pl  -g /human_genome/hg19.fa --bam unmapped.bam -s 15 -o autocirc_output   
+./AutoCirc_v1.3.pl  -g /human_genome/hg19.fa --bam unmapped.bam -s 15 -o autocirc_output   
 ```
 
 ## NOTE: 

@@ -37,7 +37,7 @@ You will also need Perl version 5.16.3 or higher.
 ## RNA-seq data
 PolyA-depleted, ribosome-depleted, or RNase R-treated RNA-seq data in FASTQ format.
 The lengths of reads should be at least 50 nucleotides (nt). 
-## To identify reliable back splice junctions of potential circRNAs, we recommend using RNA-seq with read lengths of at least 80 nt . 
+#### To identify reliable back splice junctions of potential circRNAs, we recommend using RNA-seq with read lengths of at least 80 nt . 
 
 ## Data Preparation
 To obtain the unmapped reads, the user should map all reads to a reference genome either by *Bowtie2 or TopHat*. For paired end RNA-seq data, each end of RNA-seq data will be processed separately as a single end RNA-seq data.

@@ -40,7 +40,8 @@ The lengths of reads should be at least 50 nucleotides (nt).
 To identify reliable back splice junctions of potential circRNAs, we recommend using RNA-seq with read lengths of at least 80 nt . 
 
 ## Data Preparation
-To obtain the unmapped reads, the user should map all reads to a reference genome either by *Bowtie2 or TopHat*. *For paired end RNA-seq data, each end of RNA-seq data will be processed separately as a single end RNA-seq data*.
+To obtain the unmapped reads, the user should map all reads to a reference genome either by *Bowtie2 or TopHat*. 
+#### *For paired end RNA-seq data, each end of RNA-seq data will be processed separately as a single end RNA-seq data*.
 
 For example:
 * Bowtie2:

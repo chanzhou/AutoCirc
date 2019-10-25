@@ -8,7 +8,7 @@ Version: 1.3
 
 Last Modified: 08/21/2018
 
-Authors: Chan Zhou (zhou.chan@mgh.harvard.edu)
+Authors: Chan Zhou (chan.zhou@umassmed.edu)
 
 Maintainer: Chan Zhou 
 

@@ -6,7 +6,7 @@ AutoCirc is a computational program to automatically identify back-splice juncti
 
 Version: 1.3.1
 
-Last Modified: 08/21/2018
+Last Modified: 04/08/2020
 
 Authors: Chan Zhou (chan.zhou@umassmed.edu)
 

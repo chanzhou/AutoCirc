@@ -15,7 +15,7 @@
 #Nicholas O. Van Wittenberghe, Yi Xing, Cosmas C. Giallourakis, and Alan C. Mullen
 #(submitted)
 #BioRxiv version: http://biorxiv.org/content/early/2017/03/10/115899
-#Last updated: 04/09/2018
+#Last updated: 04/09/2020
 #Pls read README before using this pipeline.
 
 our $VERSION="version 1.3.1";

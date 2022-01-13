@@ -77,6 +77,7 @@ chmod 755 AutoCirc_v1.3.pl
 chmod 755 script/*
 ```
 Then run the pipeline inside the AutoCirc folder, which includes all the required scripts. 
+### NOTE: Both the AutoCirc_v1.3.pl and the “script” folder should be put in the same directory where you run the program.
 
 ### Usage
 ```bash
